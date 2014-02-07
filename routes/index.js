@@ -5,18 +5,23 @@ var Workout = mongoose.model( 'Workout');
  * GET home page.
  */
 
-exports.index = function(req, res){
-  Workout.find( function(err, workouts, count ) {
-    res.render('index', {
-      title: "simple workout",
-      workouts: workouts
-    });
+exports.index = function(req, res, next){
+  var user_id = req.cookies ? req.cookies.user_id : undefined;
+  Workout.
+    find({ user_id: user_id}).
+    exec( function(err, workouts, count ) {
+      if( err ) return next( err );
+
+      res.render('index', {
+        title: "simple workout",
+        workouts: workouts
+      });
   });
 };
 
-exports.create = function(req, res) {
-  console.log(req.body);
+exports.create = function(req, res, next) {
   new Workout({
+    user_id : req.cookies.user_id,
     type    : req.body.type,
     reps    : req.body.reps,
     weight  : req.body.weight,
@@ -27,3 +32,4 @@ exports.create = function(req, res) {
     res.redirect( '/');
   });
 };
+
