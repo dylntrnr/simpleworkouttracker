@@ -11,5 +11,5 @@ var Workout = new Schema({
 });
 
 mongoose.model( 'Workout', Workout);
-mongoose.connect( 'mongodb://localhost/simpleWorkout' );
+mongoose.connect( process.env.MONGOLAB_URI || 'mongodb://localhost/simpleWorkout' );
 
