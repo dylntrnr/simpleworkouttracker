@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  form(action="/create", method="post")
+    input(type="text", name="type", placeholder="type")
+    input(type="text", name="reps", placeholder="reps")
+    input(type="text", name="weight", placeholder="weight")
+    input(type="text", name="notes", placeholder="notes")
+    input(type="submit", value="submit")
+  for workout in workouts
+    li #{workout.type} at #{workout.weight} | #{workout.reps} reps | #{workout.date} | Notes: #{workout.notes}
+
