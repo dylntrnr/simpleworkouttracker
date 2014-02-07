@@ -17,5 +17,5 @@ block content
   for workout in workouts
     li
       a(href='/edit/#{workout._id}', title="edit this") #{workout.type} at #{workout.weight} | #{workout.reps} reps | #{moment().format('MM/DD/YY')}
-      a.close(href='/destroy/#{workout.id}', title="delete this")  x
+      a.close(href='/destroy/#{workout.id}', title="delete this") x
 
