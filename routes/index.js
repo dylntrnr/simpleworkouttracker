@@ -44,6 +44,28 @@ exports.destroy = function(req, res, next) {
   });
 };
 
+exports.edit = function( req, res, next) {
+  Workout.find( function ( err, workouts) {
+    res.render( 'edit', {
+      title: "Edit",
+      workouts : workouts,
+      current  : req.params.id
+    });
+  });
+};
+
+exports.update = function( req, res, next) {
+  Workout.findById( req.params.id, function( err, workout) {
+    workout.type    = req.body.type;
+    workout.reps    = req.body.reps;
+    workout.weight  = req.body.weight;
+    workout.updated_at = Date.now();
+    workout.save( function(err, workouts, count){
+      res.redirect( '/');
+    });
+  });
+};
+
 // ** express turns the cookie key to lowercase **
 exports.current_user = function ( req, res, next ){
   var user_id = req.cookies ?
