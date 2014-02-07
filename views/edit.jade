@@ -1,11 +1,9 @@
 extends layout
+include ./mixins
 
 block content
   h1= title
   for workout in workouts
     if workout._id == current
       form(action="/update/#{workout._id}", method="post")
-        input(type="text", name="type", placeholder="type", value="#{workout.type}")
-        input(type="text", name="reps", placeholder="reps", value="#{workout.reps}")
-        input(type="text", name="weight", placeholder="weight", value="#{workout.weight}")
-        input(type="submit", value="submit")
+        +form(workout)

@@ -7,7 +7,8 @@ var Workout = new Schema({
   reps       : Number,
   weight     : Number,
   notes      : String,
-  date       : Date
+  updated_at : { type: Date, default: Date.now()},
+  created       : { type: Date, default: Date.now()}
 });
 
 mongoose.model( 'Workout', Workout);

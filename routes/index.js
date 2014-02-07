@@ -11,7 +11,7 @@ exports.index = function(req, res, next){
   console.log(user_id);
   Workout.
     find({ user_id: user_id}).
-    sort( '-date' ).
+    sort( '-created' ).
     exec( function(err, workouts, count ) {
       if( err ) return next( err );
 
@@ -28,9 +28,7 @@ exports.create = function(req, res, next) {
     type    : req.body.type,
     reps    : req.body.reps,
     weight  : req.body.weight,
-    notes   : req.body.notes,
-    date    : Date.now(),
-    updated_at : Date.now()
+    notes   : req.body.notes
   }).save( function(err, workouts, count){
     res.redirect( '/');
   });
