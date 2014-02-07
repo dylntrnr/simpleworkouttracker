@@ -5,7 +5,7 @@ mixin list(workouts)
         div.type #{workout.type}
         div.weight #{workout.weight}
         div.reps #{workout.reps}
-        div.date #{moment(workout.date).format('MM/DD/YY')}
+        div.date #{moment(workout.date).calendar()}
       a.close(href='/destroy/#{workout.id}', title="delete this") x
 
 mixin form(workout)
