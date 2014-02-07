@@ -9,6 +9,7 @@ exports.index = function(req, res, next){
   var user_id = req.cookies ? req.cookies.user_id : undefined;
   Workout.
     find({ user_id: user_id}).
+    sort( '-date' ).
     exec( function(err, workouts, count ) {
       if( err ) return next( err );
 
@@ -33,3 +34,10 @@ exports.create = function(req, res, next) {
   });
 };
 
+exports.destroy = function(req, res, next) {
+  Workout.findById( req.params.id, function( err, workout) {
+    workout.remove( function( err, workout) {
+      res.redirect('/');
+    });
+  });
+};
