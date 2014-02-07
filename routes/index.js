@@ -1,4 +1,4 @@
-
+var utils = require('../utils');
 var mongoose = require('mongoose');
 var Workout = mongoose.model( 'Workout');
 /*
@@ -6,7 +6,9 @@ var Workout = mongoose.model( 'Workout');
  */
 
 exports.index = function(req, res, next){
-  var user_id = req.cookies ? req.cookies.user_id : undefined;
+  var user_id = req.cookies ?
+    req.cookies.user_id : undefined;
+  console.log(user_id);
   Workout.
     find({ user_id: user_id}).
     sort( '-date' ).
@@ -40,4 +42,16 @@ exports.destroy = function(req, res, next) {
       res.redirect('/');
     });
   });
+};
+
+// ** express turns the cookie key to lowercase **
+exports.current_user = function ( req, res, next ){
+  var user_id = req.cookies ?
+      req.cookies.user_id : undefined;
+
+  if( !user_id ){
+    res.cookie( 'user_id', utils.uid( 32 ));
+  }
+
+  next();
 };
