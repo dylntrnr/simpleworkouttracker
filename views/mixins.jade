@@ -5,11 +5,15 @@ mixin list(workouts)
         div.type #{workout.type}
         div.weight #{workout.weight}
         div.reps #{workout.reps}
-        div.date #{moment(workout.date).calendar()}
+        div.date #{moment(workout.created).calendar()}
       a.close(href='/destroy/#{workout.id}', title="delete this") x
 
 mixin form(workout)
   input(type="text", onClick="this.select()", name="type", value="#{workout.type}")
   input(type="number", onClick="this.select()", name="reps", value="#{workout.reps}")
   input(type="number", onClick="this.select()", step="5", name="weight", value="#{workout.weight}")
+  input(type="hidden", id="hiddenbox", name="time")
   input(type="submit", value="submit")
+
+  script.
+    document.getElementById("hiddenbox").value= Date.now();

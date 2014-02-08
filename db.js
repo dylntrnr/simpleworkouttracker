@@ -8,7 +8,7 @@ var Workout = new Schema({
   weight     : Number,
   notes      : String,
   updated_at : { type: Date, default: Date.now()},
-  created       : { type: Date, default: Date.now()}
+  created    : Date
 });
 
 mongoose.model( 'Workout', Workout);

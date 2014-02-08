@@ -8,7 +8,6 @@ var Workout = mongoose.model( 'Workout');
 exports.index = function(req, res, next){
   var user_id = req.cookies ?
     req.cookies.user_id : undefined;
-  console.log(user_id);
   Workout.
     find({ user_id: user_id}).
     sort( '-created' ).
@@ -28,7 +27,7 @@ exports.create = function(req, res, next) {
     type    : req.body.type,
     reps    : req.body.reps,
     weight  : req.body.weight,
-    notes   : req.body.notes
+    created : req.body.time
   }).save( function(err, workouts, count){
     res.redirect( '/');
   });
