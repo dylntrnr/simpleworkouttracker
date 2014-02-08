@@ -10,7 +10,9 @@ mixin list(workouts)
 
 mixin form(workout)
   input(type="text", onClick="this.select()", name="type", value="#{workout.type}")
-  input(type="number", onClick="this.select()", step="5", name="weight", value="#{workout.weight}")
-  input(type="number", onClick="this.select()", name="reps", value="#{workout.reps}")
+  input(type="number", onClick="this.select()", step="5", name="weight", value="#{workout.weight}", placeholder="#{workout.weight}")
+  input(type="number", onClick="this.select()", name="reps", value="#{workout.reps}", placeholder="#{workout.reps}")
   input(type="hidden", id="hiddenbox", name="offset")
   input(type="submit", value="submit")
+  script.
+    document.getElementById("hiddenbox").value= new Date().getTimezoneOffset();
