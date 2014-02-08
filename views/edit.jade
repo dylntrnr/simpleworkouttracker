@@ -7,3 +7,5 @@ block content
     if workout._id == current
       form(action="/update/#{workout._id}", method="post")
         +form(workout)
+  script.
+    document.getElementById("hiddenbox").value= Date.now();

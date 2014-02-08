@@ -10,7 +10,12 @@ block content
       input(type="text", onClick="this.select()", name="type", placeholder="Lift Type")
       input(type="number", onClick="this.select()", name="reps", placeholder="Amount of Reps")
       input(type="number", onClick="this.select()", step="5", name="weight", placeholder="Amount of Weight")
+      input(type="hidden", id="hiddenbox", name="time")
       input(type="submit", value="submit")
+
   br
 
   +list(workouts)
+
+  script.
+    document.getElementById("hiddenbox").value= Date.now();

@@ -22,12 +22,15 @@ exports.index = function(req, res, next){
 };
 
 exports.create = function(req, res, next) {
+  var time = req.body.time;
+  time = +time;
+  time = new Date(time);
   new Workout({
     user_id : req.cookies.user_id,
     type    : req.body.type,
     reps    : req.body.reps,
     weight  : req.body.weight,
-    created : req.body.time
+    created : time
   }).save( function(err, workouts, count){
     res.redirect( '/');
   });
@@ -35,7 +38,9 @@ exports.create = function(req, res, next) {
 
 exports.destroy = function(req, res, next) {
   Workout.findById( req.params.id, function( err, workout) {
+    if( err ) return next( err );
     workout.remove( function( err, workout) {
+      if( err ) return next( err );
       res.redirect('/');
     });
   });
@@ -52,11 +57,14 @@ exports.edit = function( req, res, next) {
 };
 
 exports.update = function( req, res, next) {
+  var time = req.body.time;
+  time = +time;
+  time = new Date(time);
   Workout.findById( req.params.id, function( err, workout) {
     workout.type    = req.body.type;
     workout.reps    = req.body.reps;
     workout.weight  = req.body.weight;
-    workout.updated_at = Date.now();
+    workout.updated_at = time;
     workout.save( function(err, workouts, count){
       res.redirect( '/');
     });
