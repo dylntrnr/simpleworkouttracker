@@ -1,0 +1,166 @@
+{
+  "workouts": [
+    {
+      "name": {
+        "text": "Squat",
+        "href": "/wiki/Squat_(exercise)"
+      }
+    },
+    {
+      "name": {
+        "text": "Leg press",
+        "href": "/wiki/Leg_press"
+      }
+    },
+    {
+      "name": {
+        "text": "Lunge",
+        "href": "/wiki/Lunge_(exercise)"
+      }
+    },
+    {
+      "name": {
+        "text": "Deadlift",
+        "href": "/wiki/Deadlift"
+      }
+    },
+    {
+      "name": {
+        "text": "Leg extension",
+        "href": "/wiki/Leg_extension"
+      }
+    },
+    {
+      "name": {
+        "text": "Leg curl",
+        "href": "/wiki/Leg_curl"
+      }
+    },
+    {
+      "name": {
+        "text": "Standing calf raise",
+        "href": "/wiki/Standing_calf_raise"
+      }
+    },
+    {
+      "name": {
+        "text": "Seated calf raise",
+        "href": "/wiki/Seated_calf_raise"
+      }
+    },
+    {
+      "name": {
+        "text": "Hip adductor",
+        "href": "/wiki/Hip_adductor"
+      }
+    },
+    {
+      "name": {
+        "text": "Bench press",
+        "href": "/wiki/Bench_press"
+      }
+    },
+    {
+      "name": {
+        "text": "Chest fly",
+        "href": "/wiki/Chest_fly"
+      }
+    },
+    {
+      "name": {
+        "text": "Push-up",
+        "href": "/wiki/Push-up"
+      }
+    },
+    {
+      "name": {
+        "text": "Pulldown",
+        "href": "/wiki/Pulldown_exercise"
+      }
+    },
+    {
+      "name": {
+        "text": "Pull-up",
+        "href": "/wiki/Pull-up_(exercise)"
+      }
+    },
+    {
+      "name": {
+        "text": "Bent-over row",
+        "href": "/wiki/Bent-over_row"
+      }
+    },
+    {
+      "name": {
+        "text": "Upright row",
+        "href": "/wiki/Upright_row"
+      }
+    },
+    {
+      "name": {
+        "text": "Shoulder press",
+        "href": "/wiki/Shoulder_press"
+      }
+    },
+    {
+      "name": {
+        "text": "Shoulder fly",
+        "href": "/wiki/Shoulder_fly"
+      }
+    },
+    {
+      "name": {
+        "text": "Lateral raise",
+        "href": "/wiki/Lateral_raise"
+      }
+    },
+    {
+      "name": {
+        "text": "Shoulder shrug",
+        "href": "/wiki/Shoulder_shrug"
+      }
+    },
+    {
+      "name": {
+        "text": "Pushdown",
+        "href": "/wiki/Pushdown_(exercise)"
+      }
+    },
+    {
+      "name": {
+        "text": "Triceps extension",
+        "href": "/wiki/Triceps_extension"
+      }
+    },
+    {
+      "name": {
+        "text": "Biceps curl",
+        "href": "/wiki/Biceps_curl"
+      }
+    },
+    {
+      "name": {
+        "text": "Crunch",
+        "href": "/wiki/Crunch_(exercise)"
+      }
+    },
+    {
+      "name": {
+        "text": "Russian twist",
+        "href": "/wiki/Russian_twist"
+      }
+    },
+    {
+      "name": {
+        "text": "Leg raise",
+        "href": "/wiki/Leg_raise"
+      }
+    },
+    {
+      "name": {
+        "text": "Back extension",
+        "href": "/wiki/Back_extension"
+      }
+    }
+  ]
+}

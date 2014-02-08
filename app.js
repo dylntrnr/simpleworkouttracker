@@ -9,6 +9,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var workouts = require('./public/workouts.json');
 
 var app = express();
 app.locals.moment = require('moment');
@@ -38,6 +39,10 @@ app.post('/create', routes.create);
 app.get('/destroy/:id', routes.destroy);
 app.get('/edit/:id', routes.edit);
 app.post('/update/:id', routes.update);
+
+app.get('/workouts.json', function(req, res, next) {
+  res.json(workouts);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
