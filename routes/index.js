@@ -22,11 +22,14 @@ exports.index = function(req, res, next){
 };
 
 exports.create = function(req, res, next) {
+  var offset = req.body.offset;
+  offset = +offset;
   new Workout({
     user_id : req.cookies.user_id,
     type    : req.body.type,
     reps    : req.body.reps,
     weight  : req.body.weight,
+    offset  : offset,
     created : Date.now()
   }).save( function(err, workouts, count){
     res.redirect( '/');

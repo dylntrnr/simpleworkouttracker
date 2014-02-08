@@ -8,4 +8,4 @@ block content
       form(action="/update/#{workout._id}", method="post")
         +form(workout)
   script.
-    document.getElementById("hiddenbox").value= Date.now();
+    document.getElementById("hiddenbox").value= new Date().getTimezoneOffset();

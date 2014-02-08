@@ -6,6 +6,7 @@ var Workout = new Schema({
   type       : String,
   reps       : Number,
   weight     : Number,
+  offset     : Number,
   notes      : String,
   updated_at : { type: Date, default: Date.now()},
   created    : Date
