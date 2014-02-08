@@ -39,6 +39,7 @@ app.post('/create', routes.create);
 app.get('/destroy/:id', routes.destroy);
 app.get('/edit/:id', routes.edit);
 app.post('/update/:id', routes.update);
+app.get('/plot/:id', routes.plot);
 
 app.get('/workouts.json', function(req, res, next) {
   res.json(workouts);

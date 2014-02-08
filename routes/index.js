@@ -8,10 +8,10 @@ var Workout = mongoose.model( 'Workout');
 exports.index = function(req, res, next){
   var user_id = req.cookies ?
     req.cookies.user_id : undefined;
-  Workout.
-    find({ user_id: user_id}).
-    sort( '-created' ).
-    exec( function(err, workouts, count ) {
+  Workout
+    .find({ user_id: user_id})
+    .sort( '-created' )
+    .exec( function(err, workouts) {
       if( err ) return next( err );
 
       res.render('index', {
@@ -53,6 +53,19 @@ exports.edit = function( req, res, next) {
       workouts : workouts,
       current  : req.params.id
     });
+  });
+};
+
+exports.plot = function( req, res, next) {
+  Workout.find({user_id: req.cookies.user_id})
+    .where('type').equals(req.params.id)
+    .sort("-created")
+    .select('user_id weight reps created')
+    .exec( function ( err, workouts) {
+      res.render( 'plot', {
+        title: "Plot",
+        workouts : workouts
+      });
   });
 };
 

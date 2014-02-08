@@ -1,8 +1,9 @@
 mixin list(workouts)
   - each workout in workouts
     .workout
-      a(href='/edit/#{workout._id}', title="edit this")
+      a(href='/plot/#{workout.type}', title="plot")
         div.type #{workout.type}
+      a(href='/edit/#{workout._id}', title="edit this")
         div.weight #{workout.weight}
         div.reps #{workout.reps}
         div.date #{moment(workout.created).zone(workout.offset).calendar()}
