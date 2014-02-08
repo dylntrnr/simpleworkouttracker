@@ -56,18 +56,22 @@ exports.edit = function( req, res, next) {
   });
 };
 
-exports.plot = function( req, res, next) {
+exports.plotjson = function( req, res, next) {
   Workout.find({user_id: req.cookies.user_id})
     .where('type').equals(req.params.id)
     .sort("-created")
     .select('user_id weight reps created')
     .exec( function ( err, workouts) {
-      res.render( 'plot', {
-        title: "Plot",
-        workouts : workouts
-      });
+      res.json(workouts);
   });
 };
+
+exports.plot = function( req, res, next) {
+  res.render('plot',{
+    title: "plot",
+    query: req.params.id
+  });
+}
 
 exports.update = function( req, res, next) {
   Workout.findById( req.params.id, function( err, workout) {
