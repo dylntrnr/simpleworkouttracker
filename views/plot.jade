@@ -30,7 +30,7 @@ block content
   script(src="http://d3js.org/d3.v3.min.js")
   script.
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 220 - margin.left - margin.right,
+        width = 290 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
@@ -41,6 +41,7 @@ block content
 
     var xAxis = d3.svg.axis()
         .scale(x)
+        .tickFormat(d3.time.format("%d %b"))
         .orient("bottom");
 
     var yAxis = d3.svg.axis()
@@ -55,7 +56,7 @@ block content
 
     d3.json("/plotjson/#{query}", function(error, data) {
       if (error) return console.warn(error);
-      x.domain(data.map(function(d) { return d.created; }));
+      x.domain(data.map(function(d) { return new Date(d.created); }));
       y.domain([0, d3.max(data, function(d) { return d.weight; })]);
 
       svg.append("g")
@@ -68,7 +69,7 @@ block content
             .call(yAxis)
           .append("text")
             .attr("transform", "rotate(-90)")
-            .attr("y", 6)
+            .attr("y", -40)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
             .text("Weight");
@@ -77,7 +78,7 @@ block content
             .data(data)
           .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return x(d.created); })
+            .attr("x", function(d) { return x(new Date(d.created)); })
             .attr("width", x.rangeBand())
             .attr("y", function(d) { return y(d.weight); })
             .attr("height", function(d) { return height - y(d.weight); });

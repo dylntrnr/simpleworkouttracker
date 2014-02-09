@@ -61,6 +61,7 @@ exports.plotjson = function( req, res, next) {
     .where('type').equals(req.params.id)
     .sort("created")
     .select('user_id weight reps created')
+    .limit(10)
     .exec( function ( err, workouts) {
       res.json(workouts);
   });
