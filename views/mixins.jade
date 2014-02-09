@@ -12,7 +12,7 @@ mixin list(workouts)
 mixin form(workout)
   div.form_section
     label(for="type") Lift Type
-    input(type="text", onClick="this.select()", name="type", id="type", value="#{workout.type}", role="textbox")
+    input(type="text", onClick="this.select()", name="type", id="type", placeholder="#{workout.type}", role="textbox")
   div.form_section
     label(for="weight") Amount of Weight
     input(type="number", onClick="this.select()", step="5", name="weight", id="weight", value="#{workout.weight}", placeholder="#{workout.weight}", role="input")
