@@ -52,6 +52,10 @@ input {
   padding:5px;
   margin:0;
 }
+input:focus {
+  border-color:#eda024;
+  outline:0;
+}
 input[type=submit] {
   display:block;
   width:100%;
