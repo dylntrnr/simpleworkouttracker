@@ -10,10 +10,16 @@ mixin list(workouts)
       a.close(href='/destroy/#{workout.id}', title="delete this") x
 
 mixin form(workout)
-  input(type="text", onClick="this.select()", name="type", value="#{workout.type}")
-  input(type="number", onClick="this.select()", step="5", name="weight", value="#{workout.weight}", placeholder="#{workout.weight}")
-  input(type="number", onClick="this.select()", name="reps", value="#{workout.reps}", placeholder="#{workout.reps}")
+  div.form_section
+    label(for="type") Lift Type
+    input(type="text", onClick="this.select()", name="type", id="type", value="#{workout.type}", role="textbox")
+  div.form_section
+    label(for="weight") Amount of Weight
+    input(type="number", onClick="this.select()", step="5", name="weight", id="weight", value="#{workout.weight}", placeholder="#{workout.weight}", role="input")
+  div.form_section
+    label(for="reps") Number of Reps
+    input(type="number", onClick="this.select()", name="reps", id="reps", value="#{workout.reps}", placeholder="#{workout.reps}", role="input")
   input(type="hidden", id="hiddenbox", name="offset")
-  input(type="submit", value="submit")
+  input(type="submit", value="Submit", role="button")
   script.
     document.getElementById("hiddenbox").value= new Date().getTimezoneOffset();
