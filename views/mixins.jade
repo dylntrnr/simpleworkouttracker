@@ -1,13 +1,13 @@
 mixin list(workouts)
   - each workout in workouts
     .workout
-      a(href='/plot/#{workout.type}', title="plot")
+      a(href='/plot/#{workout.type}', title="Data Plot")
         div.type #{workout.type}
-      a(href='/edit/#{workout._id}', title="edit this")
+      a(href='/edit/#{workout._id}', title="Edit Entry")
         div.weight #{workout.weight}
         div.reps #{workout.reps}
         div.date #{moment(workout.created).zone(workout.offset).calendar()}
-      a.close(href='/destroy/#{workout.id}', title="delete this") x
+      a.close(href='/destroy/#{workout.id}', title="Delete Entry") x
 
 mixin form(workout)
   div.form_section
