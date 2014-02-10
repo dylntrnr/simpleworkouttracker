@@ -3,13 +3,15 @@ include ./mixins
 
 block content
   h1= title
-  form(action="/create", method="post")
+  form(action="/create", method="post", role="form")
     if workouts[0]
       +form(workouts[0])
     else
       +form({type: "Lift Type", weight: "Amount of Weight", reps: "Number of Reps"})
 
   br
+
+  h2 Your Workouts
 
   +list(workouts)
 
