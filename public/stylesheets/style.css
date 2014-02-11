@@ -12,7 +12,8 @@ body {
   margin:0 auto;
   background-color:#fff;
   /*padding: 50px;*/
-  font: 1.6rem/2.2rem "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 2em;
   font-weight:300;
   color: #333;
   padding:0;
