@@ -9,7 +9,6 @@ html {
   border-top:10px solid #ddd;
 }
 body {
-  width::100%;
   margin:0 auto;
   background-color:#fff;
   /*padding: 50px;*/
@@ -105,7 +104,6 @@ a:hover {
   /*background-color:#eee;*/
   text-align: center;
   padding:1rem 0;
-  font-size: 55%;
 }
 
 .workout a div {
@@ -209,7 +207,6 @@ a:hover {
   padding:0.2rem 0rem;
   border-top:1px solid rgba(0,0,0,0.05);
   /*border-bottom:1px solid rgba(255,255,255,0.1);*/
-  font-size: 100%;
 }
 
 .workout a div {
