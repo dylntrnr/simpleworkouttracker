@@ -59,7 +59,7 @@ exports.edit = function( req, res, next) {
 exports.plotjson = function( req, res, next) {
   Workout.find({user_id: req.cookies.user_id})
     .where('type').equals(req.params.id)
-    .sort("created")
+    .sort("-created")
     .select('user_id weight reps created')
     .limit(10)
     .exec( function ( err, workouts) {
